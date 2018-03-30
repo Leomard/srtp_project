@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/startcamera"
+        android:text="开始行车"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/update_place"
+            android:hint="修改所在地"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/update"
+            android:text="修改"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:text="所在地："
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/place"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:text="天气："
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/place_weather"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView android:text="现在温度:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/temperature"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="白天温度:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/day_temperature"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="夜晚温度:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/night_temperature"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView android:text="污染指数:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/aqi"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="空气质量:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/quality"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="空气湿度:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/sd"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView android:text="CO:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/co"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="NO2:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/no2"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="O3:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/o3"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView android:text="PM10:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/pm10"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="PM2.5:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/pm2_5"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="SO2:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/so2"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView android:text="风向:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/wind_direction"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:text="风力:"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView android:id="@+id/wind_power"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+`   <TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/test"/>
+</LinearLayout>

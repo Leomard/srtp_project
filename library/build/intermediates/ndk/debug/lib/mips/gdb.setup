@@ -1,0 +1,2 @@
+set solib-search-path D:\Srtp_project\library\build\intermediates\ndk\debug\obj/local/mips
+directory F:/Android_SDK/ndk-bundle/build//../sysroot F:/Android_SDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++ D:\Srtp_project\library\jni D:\Srtp_project\library\src\debug\jni D:/Srtp_project/library/build/intermediates/ndk/debug
