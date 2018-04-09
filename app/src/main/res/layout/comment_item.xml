@@ -5,30 +5,39 @@
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
     android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:background="#ffffff">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:layout_marginBottom="5dp"
         android:textStyle="bold"
         android:id="@+id/comment_nickname"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
+        android:layout_marginBottom="5dp"
         android:id="@+id/comment_text"
         android:singleLine="false" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
-        android:textStyle="italic"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:id="@+id/comment_place"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:textStyle="italic"
+        android:textSize="12dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:id="@+id/comment_date"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F0F0F0"/>
 
 </LinearLayout>

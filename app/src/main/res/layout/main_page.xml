@@ -21,7 +21,7 @@
         android:background="#000000">
 
         <RadioButton
-            android:text="天气"
+            android:text="路况"
             style="@style/my_tab"
             android:drawableTop="@drawable/view_1_selector"
             android:id="@+id/b1"

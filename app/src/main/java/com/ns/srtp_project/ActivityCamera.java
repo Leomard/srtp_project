@@ -11,8 +11,12 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Camera;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.net.Uri;
 import android.opengl.GLSurfaceView;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -68,7 +72,8 @@ public class ActivityCamera extends Activity implements SeekBar.OnSeekBarChangeL
     private ConnectThread connectThread;
     private ConnectedThread connectedThread;
     private BluetoothSocket mSocket;
-    Pattern pattern=Pattern.compile("[0-9]{1,}.[0-9]{1,}");
+    private double length,speed;
+    private Pattern pattern=Pattern.compile("[0-9]{1,}.[0-9]{1,}");
     private Handler mHandler=new Handler(){
         public void handleMessage(android.os.Message msg) {
             Bundle bundle=msg.getData();
@@ -78,9 +83,15 @@ public class ActivityCamera extends Activity implements SeekBar.OnSeekBarChangeL
             String toPrint=new String("");
             if(matcher.find()) {
                 toPrint = "距离：" + matcher.group() + "m   " + "速度：" ;
+                length=Double.valueOf(matcher.group());
             }
             if(matcher.find()) {
                 toPrint=toPrint+matcher.group() + "m/s";
+                speed=Double.valueOf(matcher.group());
+            }
+            double f=85.07*Math.exp(-Math.pow((speed*3.6-113.2)/71.55,2));
+            if(length<f){
+                playSound();
             }
             textView.setText(toPrint);
         };
@@ -476,6 +487,36 @@ public class ActivityCamera extends Activity implements SeekBar.OnSeekBarChangeL
                 }
 
         }
+    }
+    public void playSound(){
+        SoundPool soundPool;
+        if (Build.VERSION.SDK_INT >= 21) {
+            SoundPool.Builder builder = new SoundPool.Builder();
+            //传入音频的数量
+            builder.setMaxStreams(1);
+            //AudioAttributes是一个封装音频各种属性的类
+            AudioAttributes.Builder attrBuilder = new AudioAttributes.Builder();
+            //设置音频流的合适属性
+            attrBuilder.setLegacyStreamType(AudioManager.STREAM_MUSIC);
+            builder.setAudioAttributes(attrBuilder.build());
+            soundPool = builder.build();
+        } else {
+            //第一个参数是可以支持的声音数量，第二个是声音类型，第三个是声音品质
+            soundPool = new SoundPool(1, AudioManager.STREAM_SYSTEM, 5);
+        }
+        //第一个参数Context,第二个参数资源Id，第三个参数优先级
+        soundPool.load(getApplicationContext(),R.raw.tone_cuver_sample,1);
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                soundPool.play(1, 1, 1, 0, 0, 1);
+            }
+        });
+        //第一个参数id，即传入池中的顺序，第二个和第三个参数为左右声道，第四个参数为优先级，第五个是否循环播放，0不循环，-1循环
+        //最后一个参数播放比率，范围0.5到2，通常为1表示正常播放
+//        soundPool.play(1, 1, 1, 0, 0, 1);
+        //回收Pool中的资源
+        //soundPool.release();
     }
 
 }

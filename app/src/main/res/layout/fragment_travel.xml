@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:layout_marginRight="10dp"
+    android:background="#ffffff">
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,58 +61,67 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="#f0f0f0"
+        android:layout_margin="3dp"
+        >
 
         <TableRow
+            android:background="#ffffff"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp">
             <TextView android:text="现在温度:"
                 android:layout_width="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1.5"/>
             <TextView android:id="@+id/temperature"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
             <TextView android:text="白天温度:"
                 android:layout_width="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1.5"/>
             <TextView android:id="@+id/day_temperature"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
             <TextView android:text="夜晚温度:"
                 android:layout_width="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1.5"/>
             <TextView android:id="@+id/night_temperature"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
         </TableRow>
         <TableRow
+            android:background="#ffffff"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp">
             <TextView android:text="污染指数:"
                 android:layout_width="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1.5"/>
             <TextView android:id="@+id/aqi"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
             <TextView android:text="空气质量:"
                 android:layout_width="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1.5"/>
             <TextView android:id="@+id/quality"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
             <TextView android:text="空气湿度:"
                 android:layout_width="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1.5"/>
             <TextView android:id="@+id/sd"
                 android:layout_width="0dp"
                 android:layout_weight="1"/>
         </TableRow>
 
         <TableRow
+            android:background="#ffffff"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -137,6 +147,8 @@
         </TableRow>
 
         <TableRow
+            android:background="#ffffff"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -161,6 +173,8 @@
                 android:layout_weight="1"/>
         </TableRow>
         <TableRow
+            android:background="#ffffff"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -179,7 +193,7 @@
                 android:layout_weight="1"/>
         </TableRow>
     </TableLayout>
-`   <TextView
+    `   <TextView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/test"/>
